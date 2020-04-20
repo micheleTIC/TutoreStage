@@ -48,7 +48,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Site web</label>
-                                    <input class="input--style-4" type="url" name="website" required>
+                                    <input class="input--style-4 " type="url" name="website" required>
                                 </div>
                             </div>
                         </div>
