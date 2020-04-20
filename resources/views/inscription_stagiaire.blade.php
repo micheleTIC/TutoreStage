@@ -14,7 +14,32 @@
     <link href="css/main.css" rel="stylesheet" media="all">
 </head>
 <body style="background-color: whitesmoke;">
-
+<div class="navbar navbar-home ">
+    <div class="container">
+        <div class="row row-space">
+            <div >
+                <div class="btn">
+                    <a href="{{route('Home')}}"><h4 class="font-poppins">GESTAGE</h4></a>
+                </div>
+            </div>
+            <div >
+                <div class="btn">
+                    <a href="{{route('Home')}}"><h4 class="font-poppins"> Accueil</h4></a>
+                </div>
+            </div>
+            <div >
+                <div class="btn">
+                    <a href="{{route('Trainee')}}"><h4 class="font-poppins"> Espace Stagiaire</h4></a>
+                </div>
+            </div>
+            <div >
+                <div class="btn">
+                    <a href="{{route('Recruting')}}"><h4 class="font-poppins"> Espace Recruteur</h4></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
     <div class="wrapper wrapper--w680">
