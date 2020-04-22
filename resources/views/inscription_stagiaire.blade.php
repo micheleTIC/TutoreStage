@@ -12,34 +12,35 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
     <link href="css/main.css" rel="stylesheet" media="all">
+    <link href="css/style.css" rel="stylesheet" media="all">
 </head>
 <body style="background-color: whitesmoke;">
-<div class="navbar navbar-home ">
-    <div class="container">
+    <div class="container" style='margin: 5mm;'>
         <div class="row row-space">
             <div >
-                <div class="btn">
-                    <a href="{{route('Home')}}"><h4 class="font-poppins">GESTAGE</h4></a>
+                <div class="btn" style=''>
+                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins">GESTAGE</h4></a>
                 </div>
             </div>
             <div >
                 <div class="btn">
-                    <a href="{{route('Home')}}"><h4 class="font-poppins"> Accueil</h4></a>
+                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins"> Accueil</h4></a>
                 </div>
             </div>
             <div >
                 <div class="btn">
-                    <a href="{{route('Trainee')}}"><h4 class="font-poppins"> Espace Stagiaire</h4></a>
+                    <a href="{{route('Trainee')}}" style='text-decoration: transparent;'><h4 class="font-poppins"> Espace Stagiaire</h4></a>
                 </div>
             </div>
             <div >
                 <div class="btn">
-                    <a href="{{route('Recruting')}}"><h4 class="font-poppins"> Espace Recruteur</h4></a>
+                    <a href="{{route('Recruting')}}" style='text-decoration: transparent;'><h4 class="font-poppins"> Espace Recruteur</h4></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
     <div class="wrapper wrapper--w680">
