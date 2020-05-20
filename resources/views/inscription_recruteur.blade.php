@@ -17,27 +17,39 @@
     <link href="css/style.css" rel="stylesheet" media="all">
 
 </head>
-<body style="background-color: whitesmoke;">
-    <div class="container" style='margin: 5mm;'>
-        <div class="row row-space">
-            <div >
-                <div class="btn" style=''>
-                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins">GESTAGE</h4></a>
+<div class="navbar navbar-home" style="background-color: green; color:#fff ">
+    <div class="container">
+        <div class="row row-space" style="margin: 0; padding: 0">
+            <div>
+                <div class="col s3">
+                    <div class="content-right">
+                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
+                            GESTAGE</h4></a>
+                </div>
                 </div>
             </div>
-            <div >
-                <div class="btn">
-                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins"> Accueil</h4></a>
+            <div>
+                <div class="col s3">
+                    <div class="content-right">
+                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
+                            Accueil</h4></a>
+                </div>
                 </div>
             </div>
-            <div >
-                <div class="btn">
-                    <a href="{{route('Trainee')}}" style='text-decoration: transparent;'><h4 class="font-poppins"> Espace Stagiaire</h4></a>
+            <div>
+                <div class="col s3">
+                    <div class="content-right">
+                    <a href="{{route('Trainee')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
+                            Espace Stagiaire</h4></a>
+                </div>
                 </div>
             </div>
-            <div >
-                <div class="btn">
-                    <a href="{{route('Recruting')}}" style='text-decoration: transparent;'><h4 class="font-poppins"> Espace Recruteur</h4></a>
+            <div>
+                <div class="col s3">
+                    <div class="content-right">
+                    <a href="{{route('Recruting')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
+                            Espace Recruteur</h4></a>
+                </div>
                 </div>
             </div>
         </div>
@@ -45,12 +57,13 @@
 </div>
 
 
-<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+<body style="background-color:whitesmoke" ;>
+<div class=" page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
     <div class="wrapper wrapper--w680">
         <div class="card card-4">
             <div class="card-body">
                 <h2 class="title">Inscription d'entreprise</h2>
-                <form action="compte_recruteur.blade.php" method="POST">
+                <form action={{route('Account_Recruting')}} method="POST">
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
@@ -89,6 +102,7 @@
         </div>
     </div>
 </div>
+</body>
 
 <!-- Jquery JS-->
 <script src="vendor/jquery/jquery.min.js"></script>

@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="zxx">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="images/favicon.png">
-<title>GESTAGE</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900%7CMaterial+Icons" rel="stylesheet">
 <link rel="stylesheet" href="css/materialize.min.css">
 <link rel="stylesheet" href="css/lightbox.css">
@@ -78,19 +71,19 @@
 <body style="background-color: whitesmoke">
 
 <div class="wrapper-load">
-<div class="preloader-wrapper medium-size active">
-<div class="spinner-layer spinner-custom">
-<div class="circle-clipper left">
-<div class="circle"></div>
-</div>
-<div class="gap-patch">
-<div class="circle"></div>
-</div>
-<div class="circle-clipper right">
-<div class="circle"></div>
-</div>
-</div>
-</div>
+    <div class="preloader-wrapper medium-size active">
+        <div class="spinner-layer spinner-custom">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="navbar navbar-home" style="background-color: green">
@@ -119,61 +112,3 @@
         </div>
     </div>
 </div>
-
-<div class="wrap-card segments-page">
-
-
-<div class="card-content">
-<h1 class="center"><span class="activator">Bienvenue sur le site de recherche de stage</span></h1>
-<button><a href="{{route('Firm')}}">Voir les entreprises qui nous ont fait confiance</a></button>
-
-
-
-<div class="row">
-<div class="col s6">
-<div class="card b-shadow">
-<div class="card-image waves-effect waves-block waves-light">
-<img class="activator" src="images/card2.jpg" alt="">
-</div>
-<div class="card-content">
-<h5><span class="activator">Michèle<i class="fa fa-ellipsis-v right"></i></span></h5>
-<p><a href="">Partie réservé à Michèle</a></p>
-</div>
-<div class="card-reveal">
-<h5><span class="card-title">Michèle<i class="fa fa-close right"></i></span></h5>
-<p>l'acceuil est réservé à Michèle</p>
-</div>
-</div>
-</div>
-<div class="col s6">
-<div class="card b-shadow">
-<div class="card-image waves-effect waves-block waves-light">
-<img class="activator" src="images/card3.jpg" alt="">
-</div>
-<div class="card-content">
-<h5><span class="activator">Michèle<i class="fa fa-ellipsis-v right"></i></span></h5>
-<p><a href="">Partie réservé à Michèle</a></p>
-</div>
-<div class="card-reveal">
-<h5><span class="card-title">Michèle<i class="fa fa-close right"></i></span></h5>
-<p>l'acceuil est réservé à Michèle</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-<script src="js/jquery.min.js"></script>
-<script src="js/materialize.min.js"></script>
-<script src="js/lightbox.js"></script>
-<script src="js/jquery.filterizr.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/animsition.min.js"></script>
-<script src="js/animsition-custom.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
-</body>
-</html>

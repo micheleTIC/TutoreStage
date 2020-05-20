@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.png">
     <title>GESTAGE | Inscription</title>
     <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Vendor CSS-->
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
@@ -14,27 +16,39 @@
     <link href="css/main.css" rel="stylesheet" media="all">
     <link href="css/style.css" rel="stylesheet" media="all">
 </head>
-<body style="background-color: whitesmoke;">
-    <div class="container" style='margin: 5mm;'>
-        <div class="row row-space">
-            <div >
-                <div class="btn" style=''>
-                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins">GESTAGE</h4></a>
+<div class="navbar navbar-home" style="background-color: green; color: whitesmoke">
+    <div class="container">
+        <div class="row row-space" style="margin: 0; padding: 0 ;">
+            <div>
+                <div class="col s3">
+                    <div class="content-right"  >
+                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins" >
+                            GESTAGE</h4></a>
+                </div>
                 </div>
             </div>
-            <div >
-                <div class="btn">
-                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins"> Accueil</h4></a>
+            <div>
+                <div class="col s3">
+                    <div class="content-right">
+                    <a href="{{route('Home')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
+                            Accueil</h4></a>
+                </div>
                 </div>
             </div>
-            <div >
-                <div class="btn">
-                    <a href="{{route('Trainee')}}" style='text-decoration: transparent;'><h4 class="font-poppins"> Espace Stagiaire</h4></a>
+            <div>
+                <div class="col s3" >
+                    <div class="content-right">
+                    <a href="{{route('Trainee')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
+                            Espace Stagiaire</h4></a>
+                </div>
                 </div>
             </div>
-            <div >
-                <div class="btn">
-                    <a href="{{route('Recruting')}}" style='text-decoration: transparent;'><h4 class="font-poppins"> Espace Recruteur</h4></a>
+            <div>
+                <div class="col s3" >
+                    <div class="content-right">
+                    <a href="{{route('Recruting')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
+                            Espace Recruteur</h4></a>
+                </div>
                 </div>
             </div>
         </div>
@@ -42,17 +56,18 @@
 </div>
 
 
+<body style="background-color:whitesmoke;">
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
     <div class="wrapper wrapper--w680">
         <div class="card card-4">
             <div class="card-body">
                 <h2 class="title">Inscription Stagiaire</h2>
-                <form action="compte_stagiaire.blade.php" method="POST">
+                <form action={{route('Account_Trainee')}} method="POST">
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label">Prenom</label>
-                                <input class="input--style-4" type="text" name="first_name" required>
+                                <input class="input--style-4" type="text" name="first_name" required autofocus >
                             </div>
                         </div>
                         <div class="col-2">
@@ -104,14 +119,14 @@
                     </div>
                     <div class="input-group">
                         <label class="label">Niveau d'études</label>
-                            <select name="subject" required>
-                                <option disabled="disabled" selected="selected">--Choisissez--</option>
-                                <option>Bac + 1</option>
-                                <option>Bac + 2</option>
-                                <option>Bac + 3</option>
-                                <option>Bac + 4</option>
-                                <option>Bac + 5</option>
-                            </select>
+                        <select name="subject" required>
+                            <option disabled="disabled" selected="selected">--Choisissez--</option>
+                            <option>Bac + 1</option>
+                            <option>Bac + 2</option>
+                            <option>Bac + 3</option>
+                            <option>Bac + 4</option>
+                            <option>Bac + 5</option>
+                        </select>
                     </div>
                     <div class="p-t-15">
                         <button class="btn btn--radius-2 btn--blue" type="submit" name="submit">S'inscrire</button>
@@ -121,6 +136,8 @@
         </div>
     </div>
 </div>
+</body>
+
 
 <!-- Jquery JS-->
 <script src="vendor/jquery/jquery.min.js"></script>
