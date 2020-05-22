@@ -10,4 +10,3 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /vendor
-/resources/views/header.blade.php

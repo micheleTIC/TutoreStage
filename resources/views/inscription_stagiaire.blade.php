@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns="http://www.w3.org/1999/html">
+<html lang="{{ app()->getLocale() }}" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,32 +55,32 @@
     </div>
 </div>
 
-
 <body style="background-color:whitesmoke;">
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
     <div class="wrapper wrapper--w680">
         <div class="card card-4">
             <div class="card-body">
                 <h2 class="title">Inscription Stagiaire</h2>
-                <form action={{route('Account_Trainee')}} method="POST">
+                <form action='/connexion_stagiaire' method="POST" id="form">
+                    {{ csrf_field() }}
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Prenom</label>
-                                <input class="input--style-4" type="text" name="first_name" required autofocus >
+                                <label class="label" for="first_name">Prenom</label>
+                                <input class="input--style-4" type="text" name="first_name" pattern="[A-z]{1,15}" title="Prenom ne peut contenir que des caractères  alphabétiques" required autofocus>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label"> Nom</label>
-                                <input class="input--style-4" type="text" name="last_name" required>
+                                <label class="label" for="last_name"> Nom</label>
+                                <input class="input--style-4" type="text" name="last_name" pattern="[A-z]{1,15}" title="Nom ne peut contenir que des caractères  alphabétiques"   required>
                             </div>
                         </div>
                     </div>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label"> Date de naissance</label>
+                                <label class="label" for="birthday"> Date de naissance</label>
                                 <div class="input-group-icon">
                                     <input class="input--style-4 js-datepicker" type="date" name="birthday">
                                     <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
@@ -89,14 +89,14 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Sexe</label>
+                                <label class="label" for="gender">Sexe</label>
                                 <div class="p-t-10">
-                                    <label class="radio-container m-r-45">Male
-                                        <input type="radio" checked="checked" name="gender">
+                                    <label class="radio-container m-r-45">Homme
+                                        <input type="radio" checked="checked"  name="gender" value="Male">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <label class="radio-container">Female
-                                        <input type="radio" name="gender">
+                                    <label class="radio-container m-r-45">Femme
+                                        <input type="radio"  name="gender" value="Female">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -106,20 +106,20 @@
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">E-mail</label>
+                                <label class="label" for="email">E-mail</label>
                                 <input class="input--style-4" type="email" name="email" required>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Télephone</label>
-                                <input class="input--style-4" type="text" name="phone" required>
+                                <label class="label" for="phone">Télephone</label>
+                                <input class="input--style-4" type="text" name="phone"  pattern="[0-9]{1,15}" title="Telephone ne peut contenir que des caractères  numériques" required>
                             </div>
                         </div>
                     </div>
                     <div class="input-group">
-                        <label class="label">Niveau d'études</label>
-                        <select name="subject" required>
+                        <label class="label" for="level">Niveau d'études</label>
+                        <select name="level" required>
                             <option disabled="disabled" selected="selected">--Choisissez--</option>
                             <option>Bac + 1</option>
                             <option>Bac + 2</option>
@@ -128,8 +128,27 @@
                             <option>Bac + 5</option>
                         </select>
                     </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label" for="username">Nom d'utilisateur</label>
+                                <input class="input--style-4" type="text" name="username" pattern="[A-z0-9]{1,15}"  required >
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label" for="password">Mot de passe</label>
+                                <input class="input--style-4" type="password" name="password" required >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
                     <div class="p-t-15">
-                        <button class="btn btn--radius-2 btn--blue" type="submit" name="submit">S'inscrire</button>
+                        <button class="btn btn--radius-2 btn--green" type="submit" name="submit" >S'inscrire</button>
+                    </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--green" type="reset" name="reset"  >Reset </button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -137,8 +156,6 @@
     </div>
 </div>
 </body>
-
-
 <!-- Jquery JS-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <!-- Vendor JS-->

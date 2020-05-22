@@ -23,4 +23,10 @@ Route::get('/connexion_recruteur', 'MainController@connexion_recruteur')->name('
 Route::get('/compte_stagiaire', 'MainController@compte_stagiaire')->name('Account_Trainee');
 Route::get('/compte_recruteur', 'MainController@compte_recruteur')->name('Account_Recruting');
 Route::get('/entreprises', 'MainController@entreprises')->name('Firm');
+Route::post('/connexion_stagiaire', function (){
+    return view('connexion_stagiaire');
+});
+Route::post('/connexion_recruteur', function (){
+    return view('connexion_recruteur');
+});
 
