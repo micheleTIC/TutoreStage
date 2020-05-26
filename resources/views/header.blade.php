@@ -72,4 +72,5 @@
     <link rel="alternate stylesheet" type="text/css" href="colors/multi-color/style-dark-orange.css" title="multi-color-dark-orange" />
 
     <link rel="stylesheet" type="text/css" href="css/style.css" title="default" />
+    <link href="css/main.css" rel="stylesheet" media="all">
 </head>
