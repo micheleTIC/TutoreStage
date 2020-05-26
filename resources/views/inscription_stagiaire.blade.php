@@ -16,7 +16,7 @@
     <link href="css/main.css" rel="stylesheet" media="all">
     <link href="css/style.css" rel="stylesheet" media="all">
 </head>
-<div class="navbar navbar-home" style="background-color: green; color: whitesmoke">
+<div class="navbar navbar-home" style="background-color: #24292e; color: whitesmoke">
     <div class="container">
         <div class="row row-space" style="margin: 0; padding: 0 ;">
             <div>
@@ -117,17 +117,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="input-group">
-                        <label class="label" for="level">Niveau d'études</label>
-                        <select name="level" required>
-                            <option disabled="disabled" selected="selected">--Choisissez--</option>
-                            <option>Bac + 1</option>
-                            <option>Bac + 2</option>
-                            <option>Bac + 3</option>
-                            <option>Bac + 4</option>
-                            <option>Bac + 5</option>
-                        </select>
-                    </div>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
@@ -138,14 +127,22 @@
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label" for="password">Mot de passe</label>
-                                <input class="input--style-4" type="password" name="password" required >
+                                <input class="input--style-4" type="password" name="password"  placeholder="Mot de passe " required >
                             </div>
                         </div>
                     </div>
                     <div class="row row-space">
-                    <div class="p-t-15">
-                        <button class="btn btn--radius-2 btn--green" type="submit" name="submit" >S'inscrire</button>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label" for="password_confirmation">Confirmation de Mot de passe</label>
+                                <input class="input--style-4" type="password" name="password_confirmation" placeholder="Mot de passe(confirmation) " required >
+                            </div>
+                        </div>
                     </div>
+                    <div class="row row-space">
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--green" type="submit" name="submit" >S'inscrire</button>
+                        </div>
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--green" type="reset" name="reset"  >Reset </button>
                         </div>

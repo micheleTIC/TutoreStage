@@ -19,7 +19,7 @@
 </div>
 </div>
 
-<div class="navbar navbar-home" style="background-color: green">
+<div class="navbar navbar-home" style="background-color: #24292e; color: whitesmoke">
     <div class="container">
         <div class="row">
             <div class="col s3">

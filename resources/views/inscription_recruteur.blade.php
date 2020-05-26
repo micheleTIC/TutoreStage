@@ -15,9 +15,8 @@
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
     <link href="css/main.css" rel="stylesheet" media="all">
     <link href="css/style.css" rel="stylesheet" media="all">
-
 </head>
-<div class="navbar navbar-home" style="background-color: green; color:#fff ">
+<div class="navbar navbar-home" style="background-color: #24292e; color: whitesmoke">
     <div class="container">
         <div class="row row-space" style="margin: 0; padding: 0">
             <div>
@@ -62,16 +61,17 @@
     <div class="wrapper wrapper--w680">
         <div class="card card-4">
             <div class="card-body">
-                <h2 class="title">Inscription d'entreprise</h2>
+                <h2 class="title">Inscription d'Entreprise</h2>
                 <form action='/connexion_recruteur' method="POST" id="form">
                     {{ csrf_field() }}
                     <div class="row row-space">
                         <div class="col-2">
-                            <div class="input-group">
+                            <div class="input-group" style='width:14.5cm'>
                                 <label class="label" for="firm_name">Nom d'entreprise</label>
                                 <input class="input--style-4" type="text" name="firm_name" required>
                             </div>
                         </div>
+                    </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
@@ -88,7 +88,7 @@
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
-                                <div class="input-group" style='width:10cm;'>
+                                <div class="input-group" style='width:14.5cm;'>
                                     <label class="label" for="website">Site web</label>
                                     <input class="input--style-4 " type="url" name="website" required>
                                 </div>
@@ -104,7 +104,15 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label" for="password">Mot de passe</label>
-                                    <input class="input--style-4" type="password" name="password" required>
+                                    <input class="input--style-4" type="password" name="password"  placeholder="Mot de passe " required >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label" for="password_confirmation">Confirmation de Mot de passe</label>
+                                    <input class="input--style-4" type="password" name="password_confirmation" placeholder="Mot de passe(confirmation)" required >
                                 </div>
                             </div>
                         </div>
@@ -113,10 +121,9 @@
                                 <button class="btn btn--radius-2 btn--green" type="submit" name="submit" >S'inscrire</button>
                             </div>
                             <div class="p-t-15">
-                                <button class="btn btn--radius-2 btn--green" type="reset" name="reset"  hidden="true">Reset </button>
+                                <button class="btn btn--radius-2 btn--green" type="reset" name="reset" >Reset </button>
                             </div>
                         </div>
-                    </div>
                 </form>
             </div>
         </div>
