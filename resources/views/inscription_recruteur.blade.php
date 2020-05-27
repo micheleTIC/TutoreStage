@@ -38,7 +38,7 @@
             <div>
                 <div class="col s3">
                     <div class="content-right">
-                    <a href="{{route('Trainee')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
+                    <a href="{{route('Stagiaires')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
                             Espace Stagiaire</h4></a>
                 </div>
                 </div>

@@ -38,7 +38,7 @@
             <div>
                 <div class="col s3" >
                     <div class="content-right">
-                    <a href="{{route('Trainee')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
+                    <a href="{{route('Stagiaires')}}" style='text-decoration: transparent;'><h4 class="font-poppins">
                             Espace Stagiaire</h4></a>
                 </div>
                 </div>
@@ -92,11 +92,11 @@
                                 <label class="label" for="gender">Sexe</label>
                                 <div class="p-t-10">
                                     <label class="radio-container m-r-45">Homme
-                                        <input type="radio" checked="checked"  name="gender" value="Male">
+                                        <input type="radio" checked="checked"  name="gender" value="M">
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="radio-container m-r-45">Femme
-                                        <input type="radio"  name="gender" value="Female">
+                                        <input type="radio"  name="gender" value="F">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>

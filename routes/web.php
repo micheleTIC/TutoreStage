@@ -15,18 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@index')->name('Home');
 Route::get('/recruteur', 'MainController@recruteur')->name('Recruting');
-Route::get('/stagiaire', 'MainController@stagiaire')->name('Trainee');
+Route::get('/stagiaire', 'MainController@stagiaire')->name('Stagiaires');
 Route::get('/inscription_stagiaire', 'MainController@inscription_stagiaire')->name('SignUp_trainee');
 Route::get('/inscription_recruteur', 'MainController@inscription_recruteur')->name('SignUp_recruting');
 Route::get('/connexion_stagiaire', 'MainController@connexion_stagiaire')->name('SignIn_trainee');
 Route::get('/connexion_recruteur', 'MainController@connexion_recruteur')->name('SignIn_recruting');
 Route::get('/compte_stagiaire', 'MainController@compte_stagiaire')->name('Account_Trainee');
 Route::get('/compte_recruteur', 'MainController@compte_recruteur')->name('Account_Recruting');
-Route::get('/entreprises', 'MainController@entreprises')->name('Firm');
-Route::post('/connexion_stagiaire', function (){
-    return view('connexion_stagiaire');
-});
-Route::post('/connexion_recruteur', function (){
-    return view('connexion_recruteur');
-});
+Route::get('/entreprises', 'MainController@entreprises')->name('Recruteurs');
+
+Route::post('/connexion_stagiaire', 'StagiairePostController@store');
+Route::post('/connexion_recruteur', 'RecruteurPostController@store');
 

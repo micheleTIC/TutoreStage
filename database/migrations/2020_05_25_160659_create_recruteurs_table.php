@@ -15,11 +15,12 @@ class CreateRecruteursTable extends Migration
     {
         Schema::create('recruteurs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email', 100);
-            $table->string('Telephone', 100);
-            $table->string('Site_web', 100);
-            $table->string('Nom_d_utilisateur', 100);
-            $table->string('Mot_de_passe', 100);
+            $table->string('firm_name', 30);
+            $table->string('email', 40);
+            $table->string('phone', 20);
+            $table->string('website', 100);
+            $table->string('username', 20);
+            $table->string('password', 500);
             //$table->timestamps();
         });
     }

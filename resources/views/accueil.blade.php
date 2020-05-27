@@ -33,7 +33,7 @@
             </div>
             <div class="col s3">
                 <div class="content-right">
-                    <a href="{{route('Trainee')}}"><h4 class="white-text"> Espace Stagiaire</h4></a>
+                    <a href="{{route('Stagiaires')}}"><h4 class="white-text"> Espace Stagiaire</h4></a>
                 </div>
             </div>
             <div class="col s3">
@@ -50,7 +50,7 @@
 
 <div class="card-content">
 <h1 class="center"><span class="activator">Bienvenue sur le site de recherche de stage</span></h1>
-<button><a href="{{route('Firm')}}">Voir les entreprises qui nous ont fait confiance</a></button>
+<button><a href="{{route('Recruteurs')}}">Voir les entreprises qui nous ont fait confiance</a></button>
 
 
 

@@ -15,14 +15,14 @@ class CreateStagiairesTable extends Migration
     {
         Schema::create('stagiaires', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Prenom', 100);
-            $table->string('Nom', 100);
-            $table->date('Date_de_naissance');
-            $table->char('sexe',1);
-            $table->string('email', 100);
-            $table->string('Niveau_d_etude', 100);
-            $table->string('Nom_d_utilisateur', 100);
-            $table->string('Mot_de_passe', 100);
+            $table->string('first_name', 20);
+            $table->string('last_name', 20);
+            $table->date('birthday');
+            $table->char('gender',1);
+            $table->string('email', 20);
+            $table->string('phone', 20);
+            $table->string('username', 20);
+            $table->string('password', 500);
              //$table->timestamps();
         });
     }
