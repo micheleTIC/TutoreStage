@@ -14,7 +14,8 @@ class CreateStagiairesTable extends Migration
     public function up()
     {
         Schema::create('stagiaires', function (Blueprint $table) {
-            $table->increments('id');
+            $table->engine = 'InnoDB';
+            $table->bigIncrements('id');
             $table->string('first_name', 20);
             $table->string('last_name', 20);
             $table->date('birthday');

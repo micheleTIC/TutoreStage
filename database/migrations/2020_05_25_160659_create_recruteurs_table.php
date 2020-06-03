@@ -14,7 +14,8 @@ class CreateRecruteursTable extends Migration
     public function up()
     {
         Schema::create('recruteurs', function (Blueprint $table) {
-            $table->increments('id');
+            $table->engine = 'InnoDB';
+            $table->bigIncrements('id');
             $table->string('firm_name', 30);
             $table->string('email', 40);
             $table->string('phone', 20);
