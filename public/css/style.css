@@ -5,6 +5,10 @@ body {
     background: #f6f6f6
 }
 
+::placeholder {
+    color: gold;
+    background-color: rgb(254, 254, 255);
+}
 h1, h2, h3, h4, h5, h6 {
     line-height: 110%;
     margin: 0;

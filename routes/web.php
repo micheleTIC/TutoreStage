@@ -24,6 +24,16 @@ Route::get('/compte_stagiaire', 'MainController@compte_stagiaire')->name('Accoun
 Route::get('/compte_recruteur', 'MainController@compte_recruteur')->name('Account_Recruting');
 Route::get('/entreprises', 'MainController@entreprises')->name('Recruteurs');
 
+
+Route::match(['get', 'post'], '/ajouter_annonce', 'AnnonceController@create', function(){
+
+})->name('annoncer');
+
+Route::view('/annoncer', 'annonce_create')->name('annoncer');
 Route::post('/connexion_stagiaire', 'StagiairePostController@store');
 Route::post('/connexion_recruteur', 'RecruteurPostController@store');
+
+Route::post('/authentification_stagiaire', 'StagiairePostController@connect')->name('S_connect');
+Route::post('/authentification_recruteur', 'RecruteurPostController@connect')->name('R_connect');
+
 
