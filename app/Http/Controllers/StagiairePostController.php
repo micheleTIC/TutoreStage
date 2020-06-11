@@ -29,4 +29,24 @@ class StagiairePostController extends Controller
         return view('connexion_stagiaire');
     }
 
+    public function connect(Request $request)
+    {
+      $this->validate($request, [
+          'username'=> 'required',
+          'password' => 'required'
+      ]);
+      $post = Stagiaires::where('username',$request->get('username'))->first();
+
+      if(isset($post)){
+
+         if(Hash::check($request->get('password'),$post->password)){
+           return redirect()->route('Account_Trainee');
+         }else{
+           return back()->with(['erreur'=>'Mot de passe erronné'])->withInput();
+         }
+      }else{
+           return back()->with(['erreur'=>'Compte introuvable'])->withInput();
+      }
+    }
+
 }

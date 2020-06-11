@@ -121,7 +121,7 @@
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label" for="username">Nom d'utilisateur</label>
-                                <input ,ivff="input--style-4" type="text" name="username" pattern="[A-z0-9]{1,15}"  required >
+                                <input class="input--style-4" type="text" name="username" pattern="[A-z0-9]{1,15}"  required >
                             </div>
                         </div>
                         <div class="col-2">

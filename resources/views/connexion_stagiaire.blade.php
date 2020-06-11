@@ -47,9 +47,32 @@
 <div class="splash-caption">
 
 <div class="text">
-<h2>Isjoric</h2>
-<p>cette partie connexion du stagiaire est réservé à Isjoric.Merci et bon courage!</p>
-<a href="{{route('Account_Trainee')}}">Valider</a>
+  <div class="row">
+      <form action="{{route('S_connect')}}" method="post" class="col s12" style="width:60%;margin-right:auto;background-color:white;padding:5%">
+        @csrf
+        @if(session('erreur'))
+
+            <p class="red-text text-darken-2">{{session('erreur')}}</p>
+
+        @endif
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="username" type="text" name="username" class="validate" value="{{ old('username') }}" required>
+            <label for="username">Username</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">lock</i>
+            <input id="password" type="password" name="password" class="validate" value="{{old('password')}}" required>
+            <label for="password">Password</label>
+          </div>
+
+          <button class="btn waves-effect waves-light btn-large" style="margin:auto"  type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </form>
+    </div>
 </div>
 </div>
 </div>
