@@ -50,7 +50,7 @@
 
 <div class="card-content">
 <h1 class="center"><span class="activator">Bienvenue sur le site de recherche de stage</span></h1>
-<button><a href="{{route('Recruteurs')}}">Voir les entreprises qui nous ont fait confiance</a></button>
+
 
 
 
@@ -58,30 +58,21 @@
 <div class="col s6">
 <div class="card b-shadow">
 <div class="card-image waves-effect waves-block waves-light">
-<img class="activator" src="images/card2.jpg" alt="">
+<img class="activator" src="images/esgis.jpg" alt="">
 </div>
-<div class="card-content">
-<h5><span class="activator">Michèle<i class="fa fa-ellipsis-v right"></i></span></h5>
-<p><a href="">Partie réservé à Michèle</a></p>
-</div>
-<div class="card-reveal">
-<h5><span class="card-title">Michèle<i class="fa fa-close right"></i></span></h5>
-<p>l'acceuil est réservé à Michèle</p>
-</div>
+
+
 </div>
 </div>
 <div class="col s6">
 <div class="card b-shadow">
 <div class="card-image waves-effect waves-block waves-light">
-<img class="activator" src="images/card3.jpg" alt="">
+<img class="activator" src="images/esgis_image.jpg" alt="">
 </div>
-<div class="card-content">
-<h5><span class="activator">Michèle<i class="fa fa-ellipsis-v right"></i></span></h5>
-<p><a href="">Partie réservé à Michèle</a></p>
-</div>
+
 <div class="card-reveal">
-<h5><span class="card-title">Michèle<i class="fa fa-close right"></i></span></h5>
-<p>l'acceuil est réservé à Michèle</p>
+<h5><span class="card-title"><i class="fa fa-close right"></i></span></h5>
+<p></p>
 </div>
 </div>
 </div>

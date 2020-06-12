@@ -27,6 +27,8 @@ Route::get('/entreprises', 'MainController@entreprises')->name('Recruteurs');
 Route::post('/connexion_stagiaire', 'StagiairePostController@store');
 Route::post('/connexion_recruteur', 'RecruteurPostController@store');
 
+Route::post('/authentification_stagiaire', 'StagiairePostController@connect')->name('S_connect');
+Route::post('/authentification_recruteur', 'RecruteurPostController@connect')->name('R_connect');
 Route::post('/modification_stagiaire', 'MainController@modifierCompteStagiaire');
 Route::post('/modification_recruteur', 'MainController@modifierCompteRecruteur');
 Route::get('/deconnexion', 'MainController@deconnexion');

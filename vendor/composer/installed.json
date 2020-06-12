@@ -449,12 +449,6 @@
             "facade",
             "flare",
             "reporting"
-        ],
-        "funding": [
-            {
-                "url": "https://www.patreon.com/spatie",
-                "type": "patreon"
-            }
         ]
     },
     {

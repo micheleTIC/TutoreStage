@@ -19,9 +19,9 @@ class CreateStagiairesTable extends Migration
             $table->string('last_name', 20);
             $table->date('birthday');
             $table->char('gender',1);
-            $table->string('email', 20);
+            $table->string('email', 20)->unique();
             $table->string('phone', 20);
-            $table->string('username', 20);
+            $table->string('username', 20)->unique();
             $table->string('password', 500);
              //$table->timestamps();
         });

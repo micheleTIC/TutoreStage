@@ -9,4 +9,8 @@ class Annonce extends Model
     protected $table = 'annonces';
 
     public $timestamps = false;
+
+    public function annoncer(){
+        return $this->belongsToMany('App\Secteur');
+    }
 }
