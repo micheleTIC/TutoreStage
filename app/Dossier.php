@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Recruteur extends Model
+class Dossier extends Model
 {
-    protected $table = 'recruteurs';
+    protected $table = 'dossiers';
 
     public $timestamps = false;
 }

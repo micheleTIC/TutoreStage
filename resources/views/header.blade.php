@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/line-awesome-font-awesome.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style-dashboard.css">
 
     <link rel="alternate stylesheet" type="text/css" href="colors/material-color/style-blue.css" title="material-style-blue" />
     <link rel="alternate stylesheet" type="text/css" href="colors/material-color/style-red.css" title="material-style-red" />
