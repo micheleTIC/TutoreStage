@@ -83,7 +83,7 @@
                             @endForeach
                         </ul>
                         <div class="card-action">
-                            <form action="ajouterDossier" method="POST">
+                            <form action="ajouterDossier" method="POST" enctype="multipart/form-data">
                                 {!! csrf_field() !!}
                                 <div class="row">
                                     <div class="col s4">
@@ -109,7 +109,7 @@
                                 <form action="" method="post">
                                     <div class="row">
                                         <div class="col s9">
-                                            <input type="text" placeholder="recherche une entreprise" name="entreprise" />
+                                            <input type="search" placeholder="recherche une entreprise" name="entreprise" />
                                         </div>
                                         <div class="col s3">
                                             <button type="submit" class="btn-small" value="rechercher">
@@ -125,7 +125,15 @@
                                 <h4>Liste des entreprises</h4>
                                 <ul>
                                     @foreach($entreprises as $entreprise)
-                                        <li><div class="row"><div class="col s10">{{ $entreprise['username'] }}</div><div class="col s2"><a href="ajouterEntreprise/{{ $entreprise['id'] }}" class="btn-small">Ajouter</a></div></div></li>
+                                        <?php $existe = false ?>
+                                        @foreach ($preferences as $preference)
+                                            @if($entreprise['username'] == $preference['username'])
+                                                <?php $existe = true ?>
+                                            @endif
+                                        @endforeach
+                                        @if($existe != true)
+                                            <li><div class="row"><div class="col s10">{{ $entreprise['username'] }}</div><div class="col s2"><a href="ajouterEntreprise/{{ $entreprise['id'] }}" class="btn-small">Ajouter</a></div></div></li>
+                                        @endif
                                     @endForeach
                                 </ul>
                             </div>
