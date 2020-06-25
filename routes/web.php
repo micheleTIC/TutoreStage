@@ -48,5 +48,5 @@ Route::get('/demandeVu/{id}', 'MainController@demandeVu');
 Route::get('/annonce', 'MainController@annonce');
 Route::post('/envoyerAnnonce', 'MainController@envoyerAnnonce');
 Route::get('/supprimerAnnonce/{id}', 'MainController@supprimerAnnonce');
-Route::post('/authentification_stagiaire', 'StagiairePostController@connect')->name('S_connect');
-Route::post('/authentification_recruteur', 'RecruteurPostController@connect')->name('S_connect');
+//Route::post('/authentification_stagiaire', 'StagiairePostController@connect')->name('S_connect');
+//Route::post('/authentification_recruteur', 'RecruteurPostController@connect')->name('S_connect');

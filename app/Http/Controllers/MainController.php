@@ -52,10 +52,10 @@ class MainController extends Controller
         return view ('connexion_recruteur');
     }
     public function compte_stagiaire(Request $request){
-        $requete = Stagiaire::where('id', 2)->get();
+        $requete = Stagiaire::where('id', 1)->get();
         foreach($requete as $utilisateur)
         {
-            $request->session()->put('id', 2);
+            $request->session()->put('id', 1);
             $request->session()->put('first_name', $utilisateur['first_name']);
             $request->session()->put('last_name', $utilisateur['last_name']);
             $request->session()->put('birthday', $utilisateur['birthday']);

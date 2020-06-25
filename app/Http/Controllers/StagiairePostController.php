@@ -38,9 +38,17 @@ class StagiairePostController extends Controller
       $post = Stagiaires::where('username',$request->get('username'))->first();
 
       if(isset($post)){
-
          if(Hash::check($request->get('password'),$post->password)){
-           return redirect()->route('Account_Trainee');
+          
+              $request->session()->put('id', 2);
+              $request->session()->put('first_name', $post['first_name']);
+              $request->session()->put('last_name', $post['last_name']);
+              $request->session()->put('birthday', $post['birthday']);
+              $request->session()->put('gender', $post['gender']);
+              $request->session()->put('email', $post['email']);
+              $request->session()->put('phone', $post['phone']);
+              $request->session()->put('username', $post['username']);
+           return redirect()->route('Account_Trainee')->with('stagiaire', $request->session()->all());
          }else{
            return back()->with(['erreur'=>'Mot de passe erronné'])->withInput();
          }
