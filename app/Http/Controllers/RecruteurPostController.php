@@ -37,9 +37,14 @@ class RecruteurPostController extends Controller
       $post = Recruteurs::where('username',$request->get('username'))->first();
 
       if(isset($post)){
-
          if(Hash::check($request->get('password'),$post->password)){
-           return redirect()->route('Account_Trainee');
+              $request->session()->put('id', $post['id']);
+              $request->session()->put('firm_name', $post['first_name']);
+              $request->session()->put('website', $post['last_name']);
+              $request->session()->put('email', $post['email']);
+              $request->session()->put('phone', $post['phone']);
+              $request->session()->put('username', $post['username']);
+           return redirect()->route('Account_Recruting')->with('recruteur', $request->session()->all());
          }else{
            return back()->with(['erreur'=>'Mot de passe erronné'])->withInput();
          }
