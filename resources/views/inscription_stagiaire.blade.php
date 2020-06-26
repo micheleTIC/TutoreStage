@@ -66,7 +66,7 @@
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label" for="first_name">Prenom</label>
+                                <label class="label" for="first_name">Prenom </label>
                                 <input class="input--style-4" type="text" name="first_name" pattern="[A-z]{1,15}" title="Prenom ne peut contenir que des caractères  alphabétiques" required autofocus>
                             </div>
                         </div>
