@@ -15,8 +15,10 @@ class DossierRepository implements DossierRepositoryInterface
 
     public function ajouter($id, $inputs)
     {
+        $nomFichier = time().'.'.$inputs['fichier']->extension();
+        $inputs['fichier']->move(public_path('fichiers'), $nomFichier);
         $this->dossier->titre = $inputs['titre'];
-        $this->dossier->lien = $inputs['fichier'];
+        $this->dossier->lien = $nomFichier;
         $this->dossier->id_stagiaire = $id;
 
         $this->dossier->save();
