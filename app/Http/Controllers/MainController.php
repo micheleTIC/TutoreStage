@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Demande;
 use App\Dossier;
 use App\Annonce;
-use App\Http\Requests\AjouterDossierRequest;
 use App\Recruteur;
 use App\Preference;
 use App\Stagiaire;
+use App\Repositories\DossierRepository;
+use App\Repositories\PreferenceRepository;
 use App\Repositories\AnnonceRepository;
 use App\Repositories\PieceJointeRepository;
 use App\Repositories\RecruteurRepository;
@@ -18,8 +19,8 @@ use App\Http\Requests\EnvoyerDemandeRequest;
 use App\Http\Requests\EnvoyerAnnonceRequest;
 use App\Http\Requests\modifierCompteStagiaireRequest;
 use App\Http\Requests\modifierCompteRecruteurRequest;
-use App\Repositories\DossierRepository;
-use App\Repositories\PreferenceRepository;
+use App\Http\Requests\AjouterDossierRequest;
+use App\Http\Requests\RechercheRequest;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -129,15 +130,60 @@ class MainController extends Controller
 
         return redirect('compte_stagiaire');
     }
+    public function vueEntreprise()
+    {
+        if(session()->exists('voirEntreprise'))
+        {
+            $entreprise = Recruteur::where('id', session()->get('voirEntreprise'))->get();
+            $annonces = Annonce::where('id_recruteur', session()->get('voirEntreprise'))->get();
+            session()->forget('voirEntreprise');
+        }
+        else
+        {
+            return redirect('liste_entreprises');
+        }
+
+        return view('voir_entreprise')->with(['entreprise' => $entreprise, 'annonces' => $annonces]);
+    }
+    public function voirEntreprise($id)
+    {
+        session()->put('voirEntreprise', $id);
+        return redirect('vueEntreprise');
+    }
     public function envoyerDemande(EnvoyerDemandeRequest $request)
     {
         $demande = new DemandeRepository();
 
-        $pieces = new PieceJointeRepository();
+        $piece1 = new PieceJointeRepository();
 
         $id = $demande->envoyer(session()->get('id'), $request->all());
 
-        $pieces->joindre($id, $request->all());
+        $piece1->joindre($id, $request->input('piece1'));
+
+        if($request->input('piece2') != "")
+        {
+            $piece2 = new PieceJointeRepository();
+
+            $piece2->joindre($id, $request->input('piece2'));
+        }
+        if($request->input('piece3') != "")
+        {
+            $piece3 = new PieceJointeRepository();
+
+            $piece3->joindre($id, $request->input('piece3'));
+        }
+        if($request->input('piece4') != "")
+        {
+            $piece4 = new PieceJointeRepository();
+
+            $piece4->joindre($id, $request->input('piece4'));
+        }
+        if($request->input('piece5') != "")
+        {
+            $piece5 = new PieceJointeRepository();
+
+            $piece5->joindre($id, $request->input('piece5'));
+        }
 
         return redirect('compte_stagiaire');
     }
@@ -153,6 +199,29 @@ class MainController extends Controller
 
         return redirect('compte_stagiaire');
     }
+    public function listeEntreprises()
+    {
+        $entreprises = Recruteur::all();
+
+        $preferences = Preference::join('recruteurs', 'preferences.id_recruteur', '=', 'recruteurs.id')->select('recruteurs.username', 'preferences.id')->where('preferences.id_stagiaire', session()->get('id'))->get();
+
+        if(session()->exists('recherche'))
+        {
+            $recherche = session()->get('recherche');
+            session()->forget('recherche');
+            return view('liste_entreprises')->with(['entreprises' => $entreprises, 'preferences' => $preferences, 'recherche' => $recherche]);
+        }
+
+        return view('liste_entreprises')->with(['entreprises' => $entreprises, 'preferences' => $preferences]);
+    }
+    public function rechercherEntreprise(RechercheRequest $request)
+    {
+        $recherche = Recruteur::where('firm_name', $request->input('entreprise'))->get();
+
+        $request->session()->put('recherche', $recherche);
+
+        return redirect('liste_entreprises');
+    }
     public function compte_recruteur(Request $request){
         $requete = Recruteur::where('id', 2)->get();
         foreach($requete as $utilisateur)
@@ -166,7 +235,7 @@ class MainController extends Controller
         }
         if($request->session()->exists('email'))
         {
-            $demandes = Demande::join('stagiaires', 'demandes.id_stagiaire', '=', 'stagiaires.id')->select('stagiaires.first_name', 'stagiaires.last_name', 'demandes.id', 'demandes.type_stage')->where('demandes.id_recruteur', session()->get('id'))->get();
+            $demandes = Demande::join('stagiaires', 'demandes.id_stagiaire', '=', 'stagiaires.id')->select('stagiaires.first_name', 'stagiaires.last_name', 'demandes.id', 'demandes.type_stage', 'demandes.statut')->where('demandes.id_recruteur', session()->get('id'))->get();
 
             $annonces = Annonce::where('id_recruteur', session()->get('id'))->get();
 
@@ -191,15 +260,41 @@ class MainController extends Controller
     }
     public function accepterDemande($id)
     {
-        Demande::where('id', $id)->update(['statut' => 'accepté']);
+        Demande::where('id', $id)->update(['statut' => 'acceptée']);
 
         return redirect('compte_recruteur');
     }
     public function refuserDemande($id)
     {
-        Demande::where('id', $id)->update(['statut' => 'refusé']);
+        Demande::where('id', $id)->update(['statut' => 'refusée']);
 
         return redirect('compte_recruteur');
+    }
+    public function affichageDemande()
+    {
+        if(session()->exists('afficherDemande'))
+        {
+            $demande = Demande::join('stagiaires', 'stagiaires.id', '=', 'demandes.id_stagiaire')->select('demandes.id', 'demandes.type_stage', 'stagiaires.first_name', 'stagiaires.last_name', 'stagiaires.email', 'stagiaires.phone', 'stagiaires.username', 'stagiaires.gender')->where('demandes.id', session()->get('afficherDemande'))->get();
+            $dossier = Dossier::join('pieces_jointes', 'pieces_jointes.id_dossier', '=', 'dossiers.id')->select('dossiers.id', 'dossiers.titre', 'dossiers.lien')->where('id_demande', session()->get('afficherDemande'))->get();
+            session()->forget('afficherDemande');
+        }
+        else
+        {
+            return redirect('compte_recruteur');
+        }
+
+        return view('affichage_demande')->with(['demande' => $demande, 'dossier' => $dossier]);
+    }
+    public function telechargerPiece($id)
+    {
+        $lien = Dossier::select('lien')->where('id', $id)->get();
+
+        return response()->download(public_path($lien));
+    }
+    public function afficherDemande($id)
+    {
+        session()->put('afficherDemande', $id);
+        return redirect('affichageDemande');
     }
     public function demandeVu($id)
     {

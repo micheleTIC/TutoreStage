@@ -18,17 +18,7 @@
 </div>
 </div>
 
-<div class="navbar navbar-home" style="background-color: #24292e; color: whitesmoke">
-    <div class="container">
-        <div class="row">
-            <div class="col s4">
-                <div class="">
-                    <a href="{{route('Home')}}"><h4 class="white-text">GESTAGE</h4></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="navbar navbar-home" style="background-color: green">
+        <div class="navbar navbar-home" style="background-color: #24292e; color: whitesmoke">
             <div class="container">
                 <div class="row">
                     <div class="col s4">
@@ -49,12 +39,9 @@
                 </div>
             </div>
         </div>
-        <!-- home-splash splash-caption -->
-        <div class="home-splash">
-            <div class="content">
-            <div class="splash-caption">
-                <div class="card carte row" style="min-height: 600px">
-                    <div class="col s12 card-title">
+            <div class="principal">
+                <div class="card carte row">
+                    <div class="col s12 card-title entete">
                         Faire une demande
                     </div>
                     <div class="col s12 card-content">
@@ -145,8 +132,6 @@
                     </div>
                 </div>
             </div>
-            </div>
-        </div>
 
         <script src="js/jquery.min.js"></script>
         <script src="js/materialize.min.js"></script>

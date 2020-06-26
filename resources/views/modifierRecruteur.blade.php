@@ -31,20 +31,16 @@
                             <a href="{{route('Home')}}"><h4 class="white-text"> Accueil</h4></a>
                         </div>
                     </div>
-
                     <div class="col s4">
                         <div class="content-right">
-                            <a href="modifier_recruteur"><h4 class="white-text"> Modifier mon profil</h4></a>
+                            <a href="compte_recruteur"><h4 class="white-text"> Mon compte</h4></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="home-splash">
-            <div class="container">
-                <div class="content">
-                    <div class="splash-caption">
+                    <div class="principal">
                         <div class="card row" style="min-height: 500px;">
                             <div class="card-title">
                                 Modifier le profil
@@ -81,9 +77,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
 
         <script src="js/jquery.min.js"></script>

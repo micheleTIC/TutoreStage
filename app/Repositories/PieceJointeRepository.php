@@ -29,16 +29,8 @@ class PieceJointeRepository implements PieceJointeRepositoryInterface
         }
     }
 
-    public function joindre($demande, Array $inputs)
+    public function joindre($demande, $piece)
     {
-        $this->enregistrer($demande, $inputs['piece1']);
-
-        $this->verification($demande, $inputs['piece2']);
-
-        $this->verification($demande, $inputs['piece3']);
-
-        $this->verification($demande, $inputs['piece4']);
-
-        $this->verification($demande, $inputs['piece5']);
+        $this->verification($demande, $piece);
     }
 }

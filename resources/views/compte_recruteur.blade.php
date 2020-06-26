@@ -2,6 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
     @include('header')
     <body style="background-color: whitesmoke">
+        <?php $couleur = "blue"; ?>
         <div class="wrapper-load">
             <div class="preloader-wrapper medium-size active">
                 <div class="spinner-layer spinner-custom">
@@ -41,11 +42,8 @@
             </div>
         </div>
 
-        <div class="home-splash">
-            <div class="container">
-                <div class="content">
-                    <div class="splash-caption">
-                        <div class="card row" style="min-height: 500px;">
+                    <div class="principal">
+                        <div class="card carte row">
                             <ul class="tabs card-title" id="tabs-swipe-demo">
                                 <li class="tab col s4"><a class="active" href="#profil">Profil</a></li>
                                 <li class="tab col s4"><a href="#annonces">Annonces</a></li>
@@ -54,22 +52,22 @@
                             <div id="profil" class="col s12 card-content">
                                 <div>
                                     <ul>
-                                        <li>Nom de l'entreprise : {{ $recruteur['firm_name'] }}</li>
-                                        <li>Adresse mail de l'entreprise : {{ $recruteur['email'] }}</li>
-                                        <li>Numero de telephone de l'entreprise : {{ $recruteur['phone'] }}</li>
-                                        <li>Site Web de l'entreprise : {{ $recruteur['website'] }}</li>
-                                        <li>Pseudo de l'entreprise : {{ $recruteur['username'] }}</li>
+                                        <li class="planche">Nom de l'entreprise : <span style="color: {{ $couleur }}">{{ $recruteur['firm_name'] }}</span></li>
+                                        <li class="planche">Adresse mail de l'entreprise : <span style="color: {{ $couleur }}">{{ $recruteur['email'] }}</span></li>
+                                        <li class="planche">Numéro de téléphone de l'entreprise : <span style="color: {{ $couleur }}">{{ $recruteur['phone'] }}</span></li>
+                                        <li class="planche">Site Web de l'entreprise : <span style="color: {{ $couleur }}">{{ $recruteur['website'] }}</span></li>
+                                        <li class="planche">Pseudo de l'entreprise : <span style="color: {{ $couleur }}">{{ $recruteur['username'] }}</span></li>
                                     </ul>
                                 </div>
                                 <div class="card-action">
-                                    <a href="deconnexion" class="btn-small">Se deconnecter</a>
+                                    <a href="deconnexion" class="btn-small">Se déconnecter</a>
                                 </div>
                             </div>
                             <div id="annonces" class="col s12 card-content">
                                 <div class="card-content">
                                     <ul>
                                         @foreach ($annonces as $annonce)
-                                        <li><div class="row"><div class="col s10"> Annonce : {{ $annonce['titre'] }} | contenu : {{ $annonce['contenu'] }}</div><div class="col s2"><a href="supprimerAnnonce/{{ $annonce['id'] }}" class="btn-small">Supprimer</a></div></div></li>
+                                        <li class="planche"><div class="row"><div class="col s10"> Annonce : <span style="color: {{ $couleur }}">{{ $annonce['titre'] }}</span> <br /> Contenu : <br /><span style="color: {{ $couleur }}">{{ $annonce['contenu'] }}</span></div><div class="col s2"><a href="supprimerAnnonce/{{ $annonce['id'] }}" class="btn-small">Supprimer</a></div></div></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -81,10 +79,10 @@
                                 <ul>
                                     @foreach ($demandes as $demande)
                                     @if($demande['statut'] == "en cours")
-                                    <li>
+                                    <li class="planche">
                                         <div class="row">
-                                            <div class="col s8">
-                                                demande de stage {{ $demande['type_stage'] }} de {{ $demande['first_name']." ".$demande['last_name'] }}
+                                            <div class="col s6">
+                                                demande de stage <span style="color: {{ $couleur }}">{{ $demande['type_stage'] }}</span> de <span style="color: {{ $couleur }}">{{ $demande['first_name']." ".$demande['last_name'] }}</span>
                                             </div>
                                             <div class="col s2">
                                                 <a href="accepterDemande/{{ $demande['id'] }}" class="btn-small">
@@ -96,6 +94,11 @@
                                                     Refuser
                                                 </a>
                                             </div>
+                                            <div class="col s2">
+                                                <a href="afficherDemande/{{ $demande['id'] }}" class="btn-small">
+                                                    Afficher
+                                                </a>
+                                            </div>
                                         </div>
                                     </li>
                                     @endif
@@ -104,10 +107,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
 
         <script src="js/jquery.min.js"></script>
         <script src="js/materialize.min.js"></script>
